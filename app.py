@@ -140,9 +140,8 @@ with col2:
     st.write(f"**Total Volume:** {total_volume}")
     st.markdown("---", unsafe_allow_html=True)
 
-# Calculate growth from start date to end date
-start_price = data['Close'].iloc[0]
-end_price = data['Close'].iloc[-1]
+start_price = data['Close'].iloc[0].item()  # Convert to scalar
+end_price = data['Close'].iloc[-1].item()    # Convert to scalar
 growth = ((end_price - start_price) / start_price) * 100
 
 # Display growth percentage
