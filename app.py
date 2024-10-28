@@ -148,7 +148,7 @@ growth = ((end_price - start_price) / start_price) * 100
 
 # Display growth percentage
 st.subheader('Company Growth from Start Date to End Date')
-st.write(f"The company's stock price grew by {growth:.2f}% from {start} to {end}.")
+st.write("The company's stock price grew by {growth:.2f}%"+ "from {start}" +"+" to {end}.")
 
 
 # Create Plotly line chart for stock price
