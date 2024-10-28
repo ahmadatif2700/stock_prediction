@@ -149,14 +149,14 @@ st.subheader('Company Growth from Start Date to End Date')
 st.write("The company's stock price grew by {:.2f}% from {:.2f} to {:.2f}.".format(growth, start_price, end_price))
 
 
-price_data = data.reset_index()
-fig = px.line(price_data, x='Date', y='Close', title='Stock Price Growth', labels={'Close': 'Stock Price'})
-fig.update_traces(mode='lines+markers')
-fig.update_layout(
-    hovermode='x',  # Show values on hover
-    xaxis=dict(title='Date'),
-    yaxis=dict(title='Stock Price'),
-)
+# price_data = data.reset_index()
+# fig = px.line(price_data, x='Date', y='Close', title='Stock Price Growth', labels={'Close': 'Stock Price'})
+# fig.update_traces(mode='lines+markers')
+# fig.update_layout(
+#     hovermode='x',  # Show values on hover
+#     xaxis=dict(title='Date'),
+#     yaxis=dict(title='Stock Price'),
+# )
 
 
 # Data preprocessing
