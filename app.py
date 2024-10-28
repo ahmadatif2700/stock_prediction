@@ -149,6 +149,9 @@ st.subheader('Company Growth from Start Date to End Date')
 st.write("The company's stock price grew by {:.2f}% from {:.2f} to {:.2f}.".format(growth, start_price, end_price))
 
 
+data['Date'] = pd.to_datetime(data['Date'])
+
+# Reset index and drop NaN values
 price_data = data.reset_index(drop=True).dropna(subset=['Date', 'Close'])
 
 # Create Plotly line chart for stock price
@@ -159,7 +162,7 @@ fig = px.line(
     title='Stock Price Growth', 
     labels={'Close': 'Stock Price'}
 )
-
+    
 fig.update_traces(mode='lines+markers')
 fig.update_layout(
     hovermode='x',  # Show values on hover
@@ -169,7 +172,6 @@ fig.update_layout(
 
 # Display the figure in Streamlit
 st.plotly_chart(fig)
-
 
 # Data preprocessing
 data_train = pd.DataFrame(data.Close[0: int(len(data) * 0.80)])
