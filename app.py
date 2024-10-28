@@ -145,10 +145,10 @@ start_price = data['Close'].iloc[0]
 end_price = data['Close'].iloc[-1]
 growth = ((end_price - start_price) / start_price) * 100
 
-
 # Display growth percentage
 st.subheader('Company Growth from Start Date to End Date')
-st.write("The company's stock price grew by {growth:.2f}%"+ "from {start}" +"+" to {end}.")
+st.write("The company's stock price grew by {:.2f}% from {:.2f} to {:.2f}.".format(growth, start_price, end_price))
+
 
 
 # Create Plotly line chart for stock price
