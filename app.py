@@ -149,33 +149,33 @@ st.subheader('Company Growth from Start Date to End Date')
 st.write("The company's stock price grew by {:.2f}% from {:.2f} to {:.2f}.".format(growth, start_price, end_price))
 
 
-# Convert 'Date' to datetime, coercing errors to NaT
-data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
+# # Convert 'Date' to datetime, coercing errors to NaT
+# data['Date'] = pd.to_datetime(data['Date'], errors='coerce')
 
-# Check for NaNs in 'Date' after conversion
-print("NaNs in Date after conversion:", data['Date'].isna().sum())
+# # Check for NaNs in 'Date' after conversion
+# print("NaNs in Date after conversion:", data['Date'].isna().sum())
 
-# Reset index and drop NaN values in 'Date' and 'Close'
-price_data = data.reset_index(drop=True).dropna(subset=['Date', 'Close'])
+# # Reset index and drop NaN values in 'Date' and 'Close'
+# price_data = data.reset_index(drop=True).dropna(subset=['Date', 'Close'])
 
-# Create Plotly line chart for stock price
-fig = px.line(
-    price_data, 
-    x='Date', 
-    y='Close', 
-    title='Stock Price Growth', 
-    labels={'Close': 'Stock Price'}
-)
+# # Create Plotly line chart for stock price
+# fig = px.line(
+#     price_data, 
+#     x='Date', 
+#     y='Close', 
+#     title='Stock Price Growth', 
+#     labels={'Close': 'Stock Price'}
+# )
 
-fig.update_traces(mode='lines+markers')
-fig.update_layout(
-    hovermode='x',  # Show values on hover
-    xaxis=dict(title='Date'),
-    yaxis=dict(title='Stock Price'),
-)
+# fig.update_traces(mode='lines+markers')
+# fig.update_layout(
+#     hovermode='x',  # Show values on hover
+#     xaxis=dict(title='Date'),
+#     yaxis=dict(title='Stock Price'),
+# )
 
-# Display the figure in Streamlit
-st.plotly_chart(fig)
+# # Display the figure in Streamlit
+# st.plotly_chart(fig)
 
 
 # Data preprocessing
